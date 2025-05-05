@@ -93,13 +93,13 @@
         <!-- Slick Slider chỉ chứa hình ảnh -->
         <div class="item-slider">
           <div class="slide">
-            <img src="../booking_tour/assets/image/item1.jpg" alt="Slide 1" />
+            <img src="../user/booking_tour/assets/image/bg2.webp" alt="Slide 1" />
           </div>
           <div class="slide">
-            <img src="../booking_tour/assets/image/bg2.webp" alt="Slide 2" />
+            <img src="../user/booking_tour/assets/image/bg2.webp" alt="Slide 2" />
           </div>
           <div class="slide">
-            <img src="../booking_tour/assets/image/bg4.jpg" alt="Slide 3" />
+            <img src="../user/booking_tour/assets/image/bg4.jpg" alt="Slide 3" />
           </div>
         </div>
 
@@ -118,7 +118,7 @@
                   khám phá nhiều cảnh quan thiên nhiên tuyệt đẹp.
                 </p>
               </div>
-              <a href="../page/page_tour/tour.html"><button class="button">Bắt Đầu Ngay</button></a>
+              <a href="../user/tour.php"><button class="button">Bắt Đầu Ngay</button></a>
             </div>
           </div>
 
@@ -134,7 +134,7 @@
                   trắng, những bãi biển hoang sơ và không gian yên bình.
                 </p>
               </div>
-              <a href="../page/page_about/about.html"><button class="button">Tìm hiểu thêm</button></a>
+              <a href="../user/tour.php"><button class="button">Tìm hiểu thêm</button></a>
             </div>
           </div>
 
@@ -150,14 +150,14 @@
                   vẻ đẹp lãng mạn của thành phố sương mù Đà Lạt.
                 </p>
               </div>
-              <a href="../page/page_tour/tour.html"><button class="button">Khám phá ngay</button></a>
+              <a href="../user/tour.php"><button class="button">Khám phá ngay</button></a>
             </div>
           </div>
         </div>
 
         <!-- Nút điều hướng -->
-        <button class="inner-prev">&lt;</button>
-        <button class="inner-next">&gt;</button>
+        <!-- <button class="inner-prev">&lt;</button>
+        <button class="inner-next">&gt;</button> -->
       </div>
 
       <!-- search content -->
@@ -173,51 +173,24 @@
           <div class="inner-wrap">
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../booking_tour/assets/image/item2.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/item2.jpg" alt="" />
               </div>
-              <a href="#" class="inner-content">
-                <h3 class="content-title">Mountain climbing</h3>
-                <p class="inner-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Libero labore, odit excepturi aspernatur commodi eos!
-                </p>
-              </a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../booking_tour/assets/image/item3.webp" alt="" />
+                <img src="../user/booking_tour/assets/image/item3.webp" alt="" />
               </div>
-              <a href="#" class="inner-content">
-                <h3 class="content-title">Trailers and rv spots</h3>
-                <p class="inner-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Libero labore, odit excepturi aspernatur commodi eos!
-                </p>
-              </a>
+
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../booking_tour/assets/image/item4.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/item4.jpg" alt="" />
               </div>
-              <a href="#" class="inner-content">
-                <h3 class="content-title">Tent camping services</h3>
-                <p class="inner-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Libero labore, odit excepturi aspernatur commodi eos!
-                </p>
-              </a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../booking_tour/assets/image/background.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/background.jpg" alt="" />
               </div>
-              <a href="#" class="inner-content">
-                <h3 class="content-title">Adventure and climbing</h3>
-                <p class="inner-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Libero labore, odit excepturi aspernatur commodi eos!
-                </p>
-              </a>
             </div>
           </div>
         </div>
@@ -232,10 +205,10 @@
           <div class="inner-wrap">
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../booking_tour/assets/image/three2.webp" alt="" />
+                <img src="../user/booking_tour/assets/image/three2.webp" alt="" />
                 <div class="inner-item">
                   <div class="item-image">
-                    <img src="../booking_tour/assets/image/three3.jpg" alt="" />
+                    <img src="../user/booking_tour/assets/image/three3.jpg" alt="" />
                   </div>
                   <div class="item-content">
                     <div class="item-boder">
@@ -377,7 +350,7 @@
               </div>
             </div>
             <div class="content-image">
-              <img src="../booking_tour/assets/image/item1.jpg" alt="" />
+              <img src="../user/booking_tour/assets/image/item1.jpg" alt="" />
             </div>
           </div>
           <div class="inner-footer">
@@ -408,7 +381,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../booking_tour/assets/image/five_1.jpg" alt="" />
+                  <img src="../user/booking_tour/assets/image/five_1.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -429,17 +402,13 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span class="sub-address">Đảo Hòn Mẹo, Tỉnh Khánh Hòa</span>
                   </div>
-                  <div class="content-price">
-                    <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Từ 6.990.00</span>
-                  </div>
                 </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../booking_tour/assets/image/five-2.jpg" alt="" />
+                  <img src="../user/booking_tour/assets/image/five-2.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -460,17 +429,13 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span class="sub-address">CaFe săn mây Đà Lạt</span>
                   </div>
-                  <div class="content-price">
-                    <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Từ 490.000</span>
-                  </div>
                 </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../booking_tour/assets/image/five-3.jpg" alt="" />
+                  <img src="../user/booking_tour/assets/image/five-3.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -491,17 +456,14 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span class="sub-address">Đà Nẵng</span>
                   </div>
-                  <div class="content-price">
-                    <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Từ 1.290.000</span>
-                  </div>
+                  
                 </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../booking_tour/assets/image/five-4.jpg" alt="" />
+                  <img src="../user/booking_tour/assets/image/five-4.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -521,10 +483,6 @@
                   <div class="content-sub">
                     <i class="fa-solid fa-location-dot"></i>
                     <span class="sub-address">Vịnh Hạ Long</span>
-                  </div>
-                  <div class="content-price">
-                    <i class="fa-solid fa-sack-dollar"></i>
-                    <span>Từ 1.190.000</span>
                   </div>
                 </div>
               </div>
@@ -622,11 +580,7 @@
               <h2 class="content-quesion">
                 Bạn đã sẵn sàng để đi du lịch chưa ?
               </h2>
-              <p class="content-title">
-                Sẵn sàng du lịch với cuộc phiêu lưu thực sự
-              </p>
             </div>
-            <a href="#" class="button">Đặt tour ngay</a>
           </div>
         </div>
         <div class="col-xl-6 flex-gird">
@@ -675,7 +629,7 @@
                 <span class="sub-content">3&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../booking_tour/assets/image/seven1.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/seven1.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -688,7 +642,7 @@
                 <span class="sub-content">3&nbsp; Tours</span>
               </div>
               <div class="box-image">
-                <img src="../booking_tour/assets/image/seven2.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/seven2.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -701,7 +655,7 @@
                 <span class="sub-content">3&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../booking_tour/assets/image/seven3.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/seven3.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -718,7 +672,7 @@
                 <span class="sub-content">1&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../booking_tour/assets/image/seven4.jpeg" alt="" />
+                <img src="../user/booking_tour/assets/image/seven4.jpeg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -731,7 +685,7 @@
                 <span class="sub-content">2&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../booking_tour/assets/image/seven5.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/seven5.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -744,7 +698,7 @@
                 <span class="sub-content">2&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../booking_tour/assets/image/seven6.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/seven6.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -757,7 +711,7 @@
                 <span class="sub-content">1&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../booking_tour/assets/image/six.jpg" alt="" />
+                <img src="../user/booking_tour/assets/image/six.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -835,7 +789,7 @@
               </p>
             </div>
             <div class="item-image">
-              <img src="../booking_tour/assets/image/eight.jpg" alt="" />
+              <img src="../user/booking_tour/assets/image/eight.jpg" alt="" />
             </div>
           </div>
         </section>
