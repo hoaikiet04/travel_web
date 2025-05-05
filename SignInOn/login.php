@@ -1,48 +1,50 @@
 <?php
 session_start();
-$error = $_SESSION['error'] ?? '';
-unset($_SESSION['error']);
+require './connect.php'; // Kết nối CSDL
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    if (empty($email) || empty($password)) {
+        echo "<script>alert('Vui lòng điền đầy đủ thông tin!'); window.location.href='/login.html';</script>";
+        exit;
+    }
+
+    // Tìm theo email
+    $stmt = $conn->prepare("SELECT id, fullname, password, role FROM users WHERE email = ? AND deleted = 0");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($id, $fullname, $hashed_password, $role);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+            $_SESSION['user_id'] = $id;
+            $_SESSION['fullname'] = $fullname;
+            $_SESSION['role'] = $role;
+
+            setcookie("user_id", $id, time() + (86400 * 30), "/");
+            setcookie("fullname", $fullname, time() + (86400 * 30), "/");
+
+            if ($role == 1) {
+                header("Location: ../admin/index.php");
+            } else {
+                header("Location: ../user/index.php");
+            }
+            exit;
+        } else {
+            echo "<script>alert('Sai mật khẩu!'); window.location.href='/login.html';</script>";
+            exit;
+        }
+    } else {
+        echo "<script>alert('Email không tồn tại. Vui lòng đăng ký.'); window.location.href='/register.html';</script>";
+        exit;
+    }
+
+    $stmt->close();
+    $conn->close();
+}
 ?>
-<!DOCTYPE html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Đăng nhập</title>
-    <link rel="stylesheet" href="loginstyle.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="left-section">
-          <div class="form-box">
-            <h2 class="title">Đăng nhập</h2>
-
-            <?php if (!empty($error)): ?>
-              <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
-            <?php endif; ?>
-
-            <form action="./handle_login.php" method="POST">
-              <div class="form-group">
-                <label for="fullname">Tên người dùng</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Nhập tên người dùng" required />
-              </div>
-              <div class="form-group">
-                <label for="password">Mật khẩu</label>
-                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required />
-              </div>
-              <div class="form-group">
-                <label><input type="checkbox" name="remember" /> Ghi nhớ đăng nhập</label>
-              </div>
-              <button type="submit" class="btn-login">Đăng nhập</button>
-            </form>
-
-            <p class="register-link">
-              Chưa có tài khoản? <a href="register.html">Đăng ký</a>
-            </p>
-          </div>
-        </div>
-        <div class="right-section"></div>
-      </div>
-    </div>
-  </body>
-</html>

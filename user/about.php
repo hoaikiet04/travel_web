@@ -69,6 +69,10 @@
                   <i class="fa-solid fa-user-plus"></i>
                   Đăng Ký
                 </a>
+                <a href="../SignInOn/logout.php">
+                  <i class="fa-solid fa-user-plus"></i>
+                  Đăng xuất
+                </a>
               </div>
             </div>
           </div>
@@ -216,7 +220,7 @@
                     <img src="../admin/assets/image/team-2.jpg" alt="Guide 1">
                   </div>
                  <div class="card-about">
-                  <h3>Nguyễn Văn An</h3>
+                  <h3>Nguyễn Thùy Tiên</h3>
                   <div class="experience">
                     <i class="fa-solid fa-briefcase"></i>
                     <span><strong> 10 năm</strong>kinh nghiệm</span>
@@ -226,52 +230,52 @@
               </div>
               <div class="guide-card">
                   <div class="card-image">
-                    <img src="./asset/image/chuyen_vien/team-3.jpg" alt="Guide 2">
+                   <img src="../admin/assets/image/team-3.jpg" alt="Guide 1">
                   </div>
                  <div class="card-about">
-                  <h3>Trần Thị Bình</h3>
+                  <h3>Phương Mỹ Chi</h3>
                   <div class="experience">
                     <i class="fa-solid fa-briefcase"></i>
-                    <span><strong>8 năm</strong>kinh nghiệm</span>
+                    <span><strong> 8 năm</strong>kinh nghiệm</span>
                   </div>
                   <p>Hướng dẫn viên nhiệt tình, chuyên dẫn các tour biển đảo và hoạt động khám phá dưới nước.</p>
                  </div>
               </div>
               <div class="guide-card">
                 <div class="card-image">
-                  <img src="./asset/image/chuyen_vien/team-4.jpg" alt="Guide 3">
+                 <img src="../admin/assets/image/team-4.jpg" alt="Guide 1">
                 </div>
                   <div class="card-about">
-                    <h3>Lê Minh Châu</h3>
+                    <h3>Quang Hùng</h3>
                   <div class="experience">
                     <i class="fa-solid fa-briefcase"></i>
-                    <span><strong>12 năm</strong> kinh nghiệm</span>
+                    <span><strong> 12 năm</strong> kinh nghiệm</span>
                   </div>
                   <p>Chuyên về các tour văn hóa và lịch sử, mang đến những câu chuyện thú vị về điểm đến.</p>
                   </div>
               </div>
               <div class="guide-card">
                 <div class="card-image">
-                  <img src="./asset/image/chuyen_vien/team-5.jpg" alt="Guide 3">
+                  <img src="../admin/assets/image/team-6.jpg" alt="Guide 1">
                 </div>
                   <div class="card-about">
-                    <h3>Lê Minh Châu</h3>
+                    <h3>Noo Phước Thịnh</h3>
                   <div class="experience">
                     <i class="fa-solid fa-briefcase"></i>
-                    <span><strong>12 năm</strong> kinh nghiệm</span>
+                    <span><strong> 12 năm</strong> kinh nghiệm</span>
                   </div>
                   <p>Chuyên về các tour văn hóa và lịch sử, mang đến những câu chuyện thú vị về điểm đến.</p>
                   </div>
               </div>
               <div class="guide-card">
                 <div class="card-image">
-                  <img src="./asset/image/chuyen_vien/team-6.jpg" alt="Guide 3">
+                  <img src="../admin/assets/image/team-7.jpg" alt="Guide 1">
                 </div>
                   <div class="card-about">
-                    <h3>Lê Minh Châu</h3>
+                    <h3>Anh Tú</h3>
                   <div class="experience">
                     <i class="fa-solid fa-briefcase"></i>
-                    <span><strong>12 năm</strong> kinh nghiệm</span>
+                    <span><strong> 12 năm</strong> kinh nghiệm</span>
                   </div>
                   <p>Chuyên về các tour văn hóa và lịch sử, mang đến những câu chuyện thú vị về điểm đến.</p>
                   </div>

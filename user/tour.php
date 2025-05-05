@@ -1,3 +1,16 @@
+<?php
+session_start();
+require './connect.php';
+
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>
+        alert('Bạn cần đăng nhập để truy cập trang này!');
+        window.location.href = 'index.php';
+    </script>";
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -72,6 +85,10 @@
                     <i class="fa-solid fa-user-plus"></i>
                     Đăng Ký
                   </a>
+                  <a href="../SignInOn/logout.php">
+                  <i class="fa-solid fa-user-plus"></i>
+                  Đăng xuất
+                </a>
                 </div>
               </div>
             </div>
@@ -104,7 +121,7 @@
                 Dễ dàng khám phá các địa điểm bạn muốn trên VietTourism
               </strong>
               <p class="notification-text">
-                <a href="#" onclick="handleLogin()">Đăng nhập</a> vào tài khoản VietTourism hoặc
+                <a href="#" onclick="handleLogin()">Đăng nhập</a> vào tài khoản VietTourism hoặc <br>
                 <a href="#" onclick="handleRegister()">Đăng ký</a> để xem các địa điểm hấp dẫn hiện tại và trước đây của bạn.
               </p>
             </div>
@@ -114,18 +131,12 @@
         <h1 class="inner-title">
             Khám phá các địa điểm du lịch
         </h1>
-        <form id="tourForm">
+        <form id="tourForm" action="search.php" method="POST">
             <div class="form-group">
-                <label for="dest">Địa Điểm</label>
-                <select name="destination" id="dest" required>
-                    <option value="">Chọn địa điểm</option>
-                    <option value="NT">Nha Trang</option>
-                    <option value="ĐL">Đà Lạt</option>
-                    <option value="ĐN">Đà Nẵng</option>
-                    <option value="VHL">Vịnh Hạ Long</option>
-                    <option value="HCM">Hồ Chí Minh</option>
-                </select>
+                <label for="address">Địa Điểm</label>
+                <input type="text" name="address" id="address" placeholder="Nhập địa điểm du lịch" required>
             </div>
+
 
             <?php
             require './connect.php'; // Đảm bảo đã kết nối CSDL
@@ -151,7 +162,7 @@
 
             <div class="button-group">
                 <button type="submit" class="search-btn">Tìm kiếm</button>
-                <button onclick="location.reload()" class="btn-refresh reset-btn">Reset</button>
+                <button type="button" onclick="location.reload()" class="btn-refresh reset-btn">Reset</button>
             </div>
         </form>
     </div>

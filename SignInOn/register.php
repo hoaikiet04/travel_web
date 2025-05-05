@@ -1,34 +1,52 @@
 <?php
-session_start(); //khởi tạo session
-require 'db_connect.php';
+session_start();
+require './connect.php'; // Chỉnh đường dẫn nếu cần
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = trim($_POST['username']);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $fullname = trim($_POST['fullname']);
     $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    $confirm_password = trim($_POST['confirm-password']);
-    $error = empty($username) || empty($email) || empty($password) || empty($confirm_password) ? "Vui lòng điền đầy đủ thông tin." :
-             ($password !== $confirm_password ? "Mật khẩu xác nhận không khớp." : null);
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
 
-    if (!$error) {
-        try {
-            $stmt = $conn->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
-            $stmt->execute([$username, $email]);
-            if ($stmt->rowCount() > 0) {
-                $error = "Tên người dùng hoặc email đã tồn tại.";
-            } else {
-                $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-                $stmt->execute([$username, $email, password_hash($password, PASSWORD_DEFAULT)]);
-                $_SESSION['success'] = "Đăng ký thành công! Vui lòng đăng nhập."; //Thông báo người dùng đăng ký thành công
-                header('Location: ../SignInOn/login.html');
-                exit;
-            }
-        } catch (PDOException $e) {
-            $error = "Lỗi: " . $e->getMessage();
-        }
+    // Kiểm tra dữ liệu
+    if (empty($fullname) || empty($email) || empty($password) || empty($confirmPassword)) {
+        die("Vui lòng điền đầy đủ thông tin.");
     }
-    $_SESSION['error'] = $error; //Lưu lỗi (trống thông tin, mật khẩu không khớp, username/email đã tồn tại, lỗi database)
-    header('Location: ../SignInOn/register.html');
-    exit;
+
+    if ($password !== $confirmPassword) {
+        die("Mật khẩu xác nhận không khớp.");
+    }
+
+    // Kiểm tra email đã tồn tại
+    $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $check->bind_param("s", $email);
+    $check->execute();
+    $check->store_result();
+    if ($check->num_rows > 0) {
+        die("Email đã tồn tại!");
+    }
+    $check->close();
+
+    // Mã hóa mật khẩu
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Thêm người dùng vào database
+    $stmt = $conn->prepare("INSERT INTO users (fullname, email, password) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $fullname, $email, $hashedPassword);
+
+    if ($stmt->execute()) {
+        $_SESSION['user_id'] = $stmt->insert_id;
+        $_SESSION['fullname'] = $fullname;
+
+        setcookie("user_id", $stmt->insert_id, time() + (86400 * 30), "/");
+        setcookie("fullname", $fullname, time() + (86400 * 30), "/");
+
+        echo "<script>alert('Đăng ký thành công!'); window.location.href = '../user/index.php';</script>";
+    } else {
+        echo "Đăng ký thất bại: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>

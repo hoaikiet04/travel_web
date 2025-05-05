@@ -57,10 +57,10 @@
           <div class="inner-social">
             <nav class="inner-menu">
               <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="../page/page_about/about.html">Giới Thiệu</a></li>
+                <li><a href="./index.php">Trang chủ</a></li>
+                <li><a href="./about.php">Giới Thiệu</a></li>
                 <li class="dropdown">
-                  <a href="../page/page_tour/tour.html">Tour</a>
+                <a href="./tour.php">Tour</a>
                 </li>
               </ul>
             </nav>
@@ -74,6 +74,10 @@
                 <a href="../SignInOn/register.html">
                   <i class="fa-solid fa-user-plus"></i>
                   Đăng Ký
+                </a>
+                <a href="../SignInOn/logout.php">
+                  <i class="fa-solid fa-user-plus"></i>
+                  Đăng xuất
                 </a>
               </div>
             </div>
@@ -189,20 +193,8 @@
                   </select>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                <div class="search-item">
-                  <label for="departure-date"
-                    ><i class="fas fa-calendar-alt"></i> Từ ngày</label
-                  >
-                  <input type="date" id="departure-date" name="departure-date" required />
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                <div class="search-item">
-                  <label for="guests"><i class="fas fa-user"></i> Khách</label>
-                  <input type="number" id="guests" name="guests" min="1" value="0" required />
-                </div>
-              </div>
+          
+
               <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
                 <div class="search-item">
                   <button type="submit" id="search-button">
@@ -211,11 +203,7 @@
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                <div class="search-item">
-                  <button type="reset" id="reset-button">
-                    <i class="fas fa-undo"></i> Reset
-                  </button>
-                </div>
+                
               </div>
             </div>
           </form>
