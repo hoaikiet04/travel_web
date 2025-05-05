@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- bootstrap_css -->
-    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css" /> -->
-        <!-- Bootstrap CDN -->
+    <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -14,14 +12,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Slick CSS -->
-    <!-- <link rel="stylesheet" type="text/css" href="./css/slick/slick.css" /> -->
-    <!-- // Add the new slick-theme.css if you want the default styling -->
-    <!-- <link rel="stylesheet" type="text/css" href="./css/slick/slick-theme.css" /> -->
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/pa_style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/reset.css?v=<?= time(); ?>" />
+    <link rel="stylesheet" href="./assets/css/pa_style.css?v=<?= time(); ?>" />
+    <title>Thông tin về chúng tôi</title>
   </head>
 
   <body>
@@ -31,23 +25,19 @@
         <div class="header-top">
           <div class="container">
             <div class="contact-info">
-              <i class="fa-solid fa-location-dot"></i>
-              <span class="address"
-                >1073/23 Cách Mạng Tháng Tám, P.7, Quận Tân Bình, TP.HCM</span
-              >
             </div>
             <div class="inner-service">
               <div class="inner-book-tour">
-                <a href="../page_tour/tour.html"><span>Đặt Tour Ngay</span></a>
+                <a href="./tour.php"><span>Khám phá ngay</span></a>
               </div>
               <div class="inner-social-icon">
-                <a href="#">
+                <a href="#!">
                   <i class="fa-brands fa-facebook"></i>
                 </a>
-                <a href="#">
+                <a href="#!">
                   <i class="fa-brands fa-twitter"></i>
                 </a>
-                <a href="#">
+                <a href="#!">
                   <i class="fa-brands fa-instagram"></i>
                 </a>
               </div>
@@ -56,26 +46,26 @@
         </div>
         <div class="header-main">
           <div class="inner-logo">
-            <a href="#"><img src="" alt="" />VietTourism</a>
+            <a href="#!">VietTourism</a>
           </div>
           <div class="inner-social">
             <nav class="inner-menu">
               <ul>
-                <li><a href="../../UI/index.html">Trang chủ</a></li>
-                <li><a href="../page_about/about.html">Giới Thiệu</a></li>
+                <li><a href="./index.php">Trang chủ</a></li>
+                <li><a href="./about.php">Giới Thiệu</a></li>
                 <li class="dropdown">
-                  <a href="../page_tour/tour.html">Tour</a>
+                  <a href="./tour.php">Khám phá</a>
                 </li>
               </ul>
             </nav>
             <div class="user-menu">
               <i class="fa-solid fa-circle-user"></i>
               <div class="inner-user-auth">
-                <a href="../../SignInOn/login.html">
+                <a href="../SignInOn/login.php">
                   <i class="fa-solid fa-user"></i>
                   Đăng Nhập
                 </a>
-                <a href="../../SignInOn/register.html">
+                <a href="../SignInOn/register.php">
                   <i class="fa-solid fa-user-plus"></i>
                   Đăng Ký
                 </a>
@@ -90,21 +80,15 @@
     <!-- section-one -->
     <div class="section-one">
       <div class="slideshow-container">
-        <div class="text-content">
-            <h2 class="about">About</h2>
-            <p class="about-content">
-                People Don’t Take, Trips Take People.
-            </p>
-        </div>
         <div class="slide fade">
-            <img src="./asset/image/five-3.jpg" alt="BaNahill">
-        </div>
-        <div class="slide fade">
-            <img src="./asset/image/seven3.jpg" alt="">
-        </div>
-        <div class="slide fade">
-            <img src="./asset/image/seven4.jpeg" alt="BaNahill">
-        </div>
+              <img src="../admin/assets/image/bg-banner.jpg" alt="BaNahill">
+          </div>
+          <div class="slide fade">
+              <img src="../admin/assets/image/bg-banner2.jpg" alt="">
+          </div>
+          <div class="slide fade">
+              <img src="../admin/assets/image/bg-banner3.jpg" alt="">
+          </div>
       </div>
     </div>
     <!-- End section-one -->
@@ -117,18 +101,12 @@
                 <div class="small-heading">Du lịch chuyên nghiệp</div>
                 <h1 class="main-heading">Những chuyến đi đáng nhớ và trọn vẹn</h1>
                 <p class="description">
-                    Chúng tôi tận dụng sự giàu kinh nghiệm và hiểu biết sâu sắc về ngành du lịch để thiết kế các tour du lịch độc đáo, phù hợp với mọi sở thích và ngân sách.
+                    Chúng tôi tận dụng sự giàu kinh nghiệm và hiểu biết sâu sắc về ngành du lịch để giới thiệu với các bạn những trải nghiệm du lịch độc đáo, phù hợp với mọi sở thích và ngân sách.
                 </p>
                 <div class="contact-area">
-                    <div class="phone-icon">
-                        <!-- SVG cho icon điện thoại -->
-                        <svg viewBox="0 0 24 24" fill="white">
-                            <path d="M6.62 10.79a15.93 15.93 0 006.59 6.59l2.2-2.2a1 1 0 011.12-.21 11.67 11.67 0 003.67 1.15 1 1 0 011 1.15v3.54a1 1 0 01-1 1A18 18 0 013 5a1 1 0 011-1h3.54a1 1 0 011 1 11.67 11.67 0 001.15 3.67 1 1 0 01-.21 1.12l-2.2 2.2z"/>
-                        </svg>
-                    </div>
-                    <span>Liên hệ ngay (+84)0313-728-397</span>
+                  <a href="./tour.php" class="explore-link">Tìm hiểu</a> 
                 </div>
-                <a href="#" class="explore-link">Khám phá hơn</a>
+                
             </div>
             <!-- Cột phải: 4 khối nội dung -->
             <div class="right-section">
@@ -191,7 +169,6 @@
                 Sẵn sàng du lịch với cuộc phiêu lưu thực sự
               </p>
             </div>
-            <a href="#" class="button">Đặt tour ngay</a>
           </div>
         </div>
         <div class="col-xl-6 flex-gird">
@@ -236,13 +213,13 @@
           <div class="guides-container">
               <div class="guide-card">
                   <div class="card-image">
-                    <img src="./asset/image/chuyen_vien/team-2.jpg" alt="Guide 1">
+                    <img src="../admin/assets/image/team-2.jpg" alt="Guide 1">
                   </div>
                  <div class="card-about">
                   <h3>Nguyễn Văn An</h3>
                   <div class="experience">
                     <i class="fa-solid fa-briefcase"></i>
-                    <span><strong>10 năm</strong>kinh nghiệm</span>
+                    <span><strong> 10 năm</strong>kinh nghiệm</span>
                   </div>
                   <p>Chuyên gia về các tour miền núi phía Bắc, am hiểu văn hóa địa phương và yêu thiên nhiên.</p>
                  </div>
@@ -362,12 +339,6 @@
   </section>
     <!-- end guides-section  -->
 
- 
-
-    <!-- slick_js -->
-    <!-- <script src="./javascript/jquery-3.6.0.min.js"></script>
-    <script src="./javascript/thu_vien_jquery/jquery-3.7.1.js"></script>
-    <script src="./javascript/slick_JS/slick.min.js"></script> -->
-    <script src="javascript/pa_javas.js"></script>
+    <script src="./assets/javascript/pa_javas.js"></script>
   </body>
 </html>
