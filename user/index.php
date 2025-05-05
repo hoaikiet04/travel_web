@@ -161,54 +161,6 @@
       </div>
 
       <!-- search content -->
-      <div class="search-container">
-        <div class="container-fluid">
-          <form>
-            <div class="row">
-              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                <div class="search-item">
-                  <label for="destination"
-                    ><i class="fas fa-map-marker-alt"></i>Địa Điểm</label
-                  >
-                  <select name="destination" id="destination" required>
-                    <option value="">Chọn Địa Điểm</option>
-                    <option value="NhaTrang">Nha Trang</option>
-                    <option value="DaNang">Đà Nẵng</option>
-                    <option value="DaLat">Đà Lạt</option>
-                    <option value="VinhHaLong">Vịnh Hạ Long</option>
-                    <option value="HCM">Hồ Chí Minh</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                <div class="search-item">
-                  <label for="tour-type"
-                    ><i class="fas fa-globe"></i> Loại tour</label
-                  >
-                  <select name="tour-type" id="tour-type" required>
-                    <option value="">Chọn Loại Tour</option>
-                    <option value="DuLichBien">Nghỉ Dưỡng</option>
-                    <option value="TPHoa">Khám Phá</option>
-                    <option value="Tp">Văn Hóa</option>
-                  </select>
-                </div>
-              </div>
-          
-
-              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                <div class="search-item">
-                  <button type="submit" id="search-button">
-                    <i class="fas fa-search"></i> Tìm kiếm
-                  </button>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
     <!-- End section-one -->
 

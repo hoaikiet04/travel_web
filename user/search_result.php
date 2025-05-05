@@ -1,10 +1,41 @@
+<?php
+session_start();
+require './connect.php';
+
+// Kiểm tra dữ liệu tìm kiếm từ session
+if (!isset($_SESSION['search_address']) || !isset($_SESSION['search_category'])) {
+    header("Location: 404.php");
+    exit();
+}
+
+$address = $_SESSION['search_address'];
+$categoryId = $_SESSION['search_category'];
+
+// Truy vấn dữ liệu tour phù hợp
+$sql = "SELECT 
+            tours.title, 
+            tours.description, 
+            tours.link, 
+            tours.thumbnail, 
+            category.name AS category_name 
+        FROM tours 
+        INNER JOIN category ON tours.category_id = category.id 
+        WHERE tours.address = ? AND tours.category_id = ? AND tours.deleted = 0";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("si", $address, $categoryId);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kết quả tìm kiếm</title>
-  <style>
+    <meta charset="UTF-8">
+    <title>Kết quả tìm kiếm</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Giả sử bạn có file CSS -->
+</head>
+<style>
     body {
       font-family: Arial, sans-serif;
       background: #f7f7f7;
@@ -79,24 +110,32 @@
     .detail-link:hover {
       background: #0056b3;
     }
-  </style>
-</head>
+</style>
 <body>
+    <header>
+        <h1>KẾT QUẢ TÌM KIẾM</h1>
+        <a href="./index.php" class="home-link">← Về trang chủ</a>
+    </header>
 
-  <header>
-    <h1>KẾT QUẢ TÌM KIẾM</h1>
-    <a href="./index.php" class="home-link">← Về trang chủ</a>
-  </header>
+    <?php if ($result->num_rows > 0): ?>
+        <?php while ($row = $result->fetch_assoc()): ?>
+            <div class="card">
+                <img src="../admin/assets/image/<?= htmlspecialchars($row['thumbnail']) ?>" alt="Ảnh minh họa">
+                <div class="card-content">
+                    <div class="category"><?= htmlspecialchars($row['category_name']) ?></div>
+                    <div class="title"><?= htmlspecialchars($row['title']) ?></div>
+                    <div class="description"><?= htmlspecialchars($row['description']) ?></div>
+                    <a href="<?= htmlspecialchars($row['link']) ?>" class="detail-link" target="_blank">Xem chi tiết</a>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    <?php else: ?>
+        <p>Không tìm thấy tour phù hợp.</p>
+    <?php endif; ?>
 
-  <div class="card">
-    <img src="../assets/admin/image/bangioc.jpg" alt="Ảnh minh họa">
-    <div class="card-content">
-      <div class="category">Du lịch</div>
-      <div class="title">Khám phá Đà Lạt mộng mơ</div>
-      <div class="description">Trải nghiệm không khí se lạnh, đồi thông và những quán cà phê mộng mơ tại thành phố ngàn hoa.</div>
-      <a href="https://example.com/da-lat" class="detail-link" target="_blank">Xem chi tiết</a>
-    </div>
-  </div>
-
+    <?php
+    $stmt->close();
+    $conn->close();
+    ?>
 </body>
 </html>
