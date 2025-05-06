@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit;
         }
     } else {
-        echo "<script>alert('Email không tồn tại. Vui lòng đăng ký.'); window.location.href='/register.html';</script>";
+        echo "<script>alert('Email không tồn tại. Vui lòng đăng ký.'); window.location.href='./register.html';</script>";
         exit;
     }
 
