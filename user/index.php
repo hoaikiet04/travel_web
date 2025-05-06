@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- bootstrap_css -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -15,9 +14,8 @@
     <!-- Slick CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/css/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/slick/slick-theme.css" />
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>Trang chủ</title>
+    <link rel="stylesheet" href="./assets/css/reset.css?v=<?= time(); ?>" />
+    <link rel="stylesheet" href="./assets/css/styles.css?v=<?= time(); ?>" />
   </head>
 
   <body>
@@ -27,15 +25,19 @@
         <div class="header-top">
           <div class="container">
             <div class="contact-info">
-              <i class="fa-solid fa-location-dot"></i>
-              <span class="address"
-                >210/14, Đ.Hoàng Diệu 2, P.Linh Chiểu, TP.Thủ Đức, HCM</span
-              >
+              <i class="fa-solid fa-door-open"></i>
+              <span class="address">
+                <?php
+                session_start();
+                if (isset($_SESSION['fullname'])) {
+                    echo "Xin chào, " . htmlspecialchars($_SESSION['fullname']) . " !!!";
+                } else {
+                    echo "Xin chào !!!";
+                }
+                ?>
+              </span>
             </div>
             <div class="inner-service">
-              <div class="inner-book-tour">
-                <a href="./tour.php"><span>Xem Ngay</span></a>
-              </div>
               <div class="inner-social-icon">
                 <a href="#">
                   <i class="fa-brands fa-facebook"></i>
@@ -60,7 +62,7 @@
                 <li><a href="./index.php">Trang chủ</a></li>
                 <li><a href="./about.php">Giới Thiệu</a></li>
                 <li class="dropdown">
-                <a href="./tour.php">Tour</a>
+                <a href="./tour.php">Khám phá</a>
                 </li>
               </ul>
             </nav>
@@ -76,7 +78,7 @@
                   Đăng Ký
                 </a>
                 <a href="../SignInOn/logout.php">
-                  <i class="fa-solid fa-user-plus"></i>
+                <i class="fa-solid fa-right-from-bracket"></i>
                   Đăng xuất
                 </a>
               </div>
@@ -93,13 +95,7 @@
         <!-- Slick Slider chỉ chứa hình ảnh -->
         <div class="item-slider">
           <div class="slide">
-            <img src="../user/booking_tour/assets/image/bg2.webp" alt="Slide 1" />
-          </div>
-          <div class="slide">
-            <img src="../user/booking_tour/assets/image/bg2.webp" alt="Slide 2" />
-          </div>
-          <div class="slide">
-            <img src="../user/booking_tour/assets/image/bg4.jpg" alt="Slide 3" />
+            <img src="../user/assets/image/banner_2.jpg" alt="Slide 1" />
           </div>
         </div>
 
@@ -168,28 +164,27 @@
     <div class="section-two">
       <div class="container-fluid">
         <div class="row">
-          <h3 class="inner-title">Hoạt Động Phổ Biến</h3>
           <h2 class="inner-contact">Khám phá phiêu lưu</h2>
           <div class="inner-wrap">
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../user/booking_tour/assets/image/item2.jpg" alt="" />
+                <img src="../user/assets/image/item2.jpg" alt="" />
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../user/booking_tour/assets/image/item3.webp" alt="" />
+                <img src="../user/assets/image/item3.webp" alt="" />
               </div>
 
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../user/booking_tour/assets/image/item4.jpg" alt="" />
+                <img src="../user/assets/image/item4.jpg" alt="" />
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../user/booking_tour/assets/image/background.jpg" alt="" />
+                <img src="../user/assets/image/background.jpg" alt="" />
               </div>
             </div>
           </div>
@@ -205,10 +200,10 @@
           <div class="inner-wrap">
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-image">
-                <img src="../user/booking_tour/assets/image/three2.webp" alt="" />
+                <img src="../user/assets/image/three2.jpg" alt="" />
                 <div class="inner-item">
                   <div class="item-image">
-                    <img src="../user/booking_tour/assets/image/three3.jpg" alt="" />
+                    <img src="../user/assets/image/three3.jpg" alt="" />
                   </div>
                   <div class="item-content">
                     <div class="item-boder">
@@ -277,7 +272,7 @@
           <div class="inner-wrap">
             <div class="list-item">
               <div
-                class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 defaul change"
+                class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 change"
               >
                 <div class="inner-item">
                   <i class="fa-solid fa-tent-arrow-down-to-line"></i>
@@ -318,6 +313,9 @@
             <div class="wrap-content">
               <div class="content-icon">
                 <i class="fa-solid fa-tent-arrows-down"></i>
+                <i class="fa-solid fa-person-biking"></i>
+                <i class="fa-solid fa-person-swimming"></i>
+                <i class="fa-solid fa-person-hiking"></i>
               </div>
               <div class="content-desc">
                 <h2>
@@ -335,7 +333,7 @@
                     <div class="rating-bar">
                       <div class="rating-progress" style="width: 98%"></div>
                     </div>
-                    <span>98%</span>
+                    <span></span>
                   </div>
                 </div>
                 <div class="content-positive">
@@ -344,13 +342,13 @@
                     <div class="rating-bar">
                       <div class="rating-progress" style="width: 95%"></div>
                     </div>
-                    <span>95%</span>
+                    <span></span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="content-image">
-              <img src="../user/booking_tour/assets/image/item1.jpg" alt="" />
+              <img src="../user/assets/image/banner_2.jpg" alt="" />
             </div>
           </div>
           <div class="inner-footer">
@@ -359,7 +357,7 @@
               <span>Phiêu lưu độc đáo</span>
               <p>Sẵn sàng phiêu lưu và tận hưởng thiên nhiên</p>
             </div>
-            <a href="#" class="footer-button">Khám phá ngay</a>
+            <a href="./search.php" class="footer-button">Khám phá ngay</a>
           </div>
         </div>
       </div>
@@ -381,7 +379,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../user/booking_tour/assets/image/five_1.jpg" alt="" />
+                  <img src="../user/assets/image/five_1.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -408,7 +406,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../user/booking_tour/assets/image/five-2.jpg" alt="" />
+                  <img src="../user/assets/image/five-2.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -435,7 +433,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../user/booking_tour/assets/image/five-3.jpg" alt="" />
+                  <img src="../user/assets/image/five-3.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -463,7 +461,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6 flex-box">
               <div class="list-box">
                 <div class="box-image">
-                  <img src="../user/booking_tour/assets/image/five-4.jpg" alt="" />
+                  <img src="../user/assets/image/five-4.jpg" alt="" />
                 </div>
                 <div class="content-box">
                   <div class="list-icons">
@@ -521,7 +519,7 @@
                 <i class="fa-solid fa-award"></i>
               </div>
               <div class="card-content">
-                <h2 class="inner-title">Chất dịch vụ</h2>
+                <h2 class="inner-title">Chất lượng dịch vụ</h2>
                 <p class="inner-desc">
                   Chúng tôi luôn đảm bảo rằng mọi khía cạnh của chuyến đi đều
                   được chăm sóc tận tâm để đáp ứng sự mong đợi của bạn.
@@ -629,7 +627,7 @@
                 <span class="sub-content">3&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../user/booking_tour/assets/image/seven1.jpg" alt="" />
+                <img src="../user/assets/image/seven1.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -642,7 +640,7 @@
                 <span class="sub-content">3&nbsp; Tours</span>
               </div>
               <div class="box-image">
-                <img src="../user/booking_tour/assets/image/seven2.jpg" alt="" />
+                <img src="../user/assets/image/dalat.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -655,7 +653,7 @@
                 <span class="sub-content">3&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../user/booking_tour/assets/image/seven3.jpg" alt="" />
+                <img src="../user/assets/image/seven3.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -672,7 +670,7 @@
                 <span class="sub-content">1&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../user/booking_tour/assets/image/seven4.jpeg" alt="" />
+                <img src="../user/assets/image/seven4.jpeg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -685,7 +683,7 @@
                 <span class="sub-content">2&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../user/booking_tour/assets/image/seven5.jpg" alt="" />
+                <img src="../user/assets/image/seven5.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -698,7 +696,7 @@
                 <span class="sub-content">2&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../user/booking_tour/assets/image/seven6.jpg" alt="" />
+                <img src="../user/assets/image/seven6.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -711,7 +709,7 @@
                 <span class="sub-content">1&nbsp;Tours</span>
               </div>
               <div class="box-image">
-                <img src="../user/booking_tour/assets/image/six.jpg" alt="" />
+                <img src="../user/assets/image/six.jpg" alt="" />
               </div>
               <div class="box-content">
                 <p class="sub-title-box">Du lịch</p>
@@ -743,7 +741,6 @@
                 <p class="content-title">Du khách thân thiết</p>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
               <div class="inner-item">
                 <div class="item-icon">
                   <i class="fa-solid fa-tent-arrows-down"></i>
@@ -752,8 +749,7 @@
                   <h4 class="content-number">1650+</h4>
                   <p class="content-title">Tours hoạt động</p>
                 </div>
-              </div>
-            </div>
+              </div>          
             <div class="inner-item">
               <div class="item-icon">
                 <i class="fa-solid fa-award"></i>
@@ -789,7 +785,7 @@
               </p>
             </div>
             <div class="item-image">
-              <img src="../user/booking_tour/assets/image/eight.jpg" alt="" />
+              <img src="../user/assets/image/travel.jpg" alt="" />
             </div>
           </div>
         </section>
@@ -799,10 +795,9 @@
     <div>
       <div class="footer-container">
         <div class="footer-box empty-box"></div>
-
         <div class="footer-box image-box">
-            <img src="assets/img1.png" alt="">
-            <p>Tham gia và trải nghiệm cùng chúng tôi những vùng đất tuyệt đẹp của Việt Nam</p>
+            <h3>GVHD: <br> Trần Anh Quân</h3>
+            <h3>Nhóm 7</h3>
             <div class="social-icons">
                 <a href=""><i class="fab fa-facebook-f"></i></a>
                 <a href=""><i class="fab fa-tiktok"></i></a>
@@ -814,19 +809,16 @@
         <div class="footer-box spacer-box"></div>
 
         <div class="footer-box newsletter-box">
-            <p class="phone">(+84) 0989-522-125</p>
-            <h2>Bản tin</h2>
-            <p><a href="../LogIn/SignIn/login.html">Đăng kí</a> ngay để nhận bản tin mới nhất</p>
+            <p><a href="../SignInOn/register.html">Đăng kí</a> ngay để nhận bản tin mới nhất</p>
             <p>Chúng tôi cam kết sẽ đem đến những dịch vụ tốt nhất cho người dùng</p>
         </div>
 
         <div class="footer-box contact-box">
             <h3>Liên hệ</h3>
             <p class="label">Email</p>
-            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a68489898d8f8881a6818b878f8ac885898b">[email&#160;protected]</a></p>
-
+            <p>sinhvien@ut.edu.vn</p>
             <p class="label">Địa chỉ</p>
-            <p>1073/23 Cách Mạng Tháng Tám, P.7, Quận Tân Bình, TP.HCM</p>
+            <p>Trường Đại học <br> Giao Thông Vận Tải Thành phố Hồ Chí Minh</p>
         </div>
     </div>
   </div>

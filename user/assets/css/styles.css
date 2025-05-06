@@ -5,6 +5,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .header-top {
@@ -250,8 +251,6 @@ header .container {
 
 /* section-one */
 .section-one {
-  /* position: relative; */
-  /* width: 100%; */
   overflow: hidden;
 }
 
@@ -1051,10 +1050,6 @@ header .container {
   /* text-align: center; */
 }
 
-.section-four .container-fluid {
-  margin-left: 43.2px;
-}
-
 .section-four .row {
   padding: 25px 5px;
   background-color: #333333;
@@ -1062,7 +1057,6 @@ header .container {
   width: 100%;
   margin: 0 auto;
   height: 950px;
-  border-radius: 4px;
   position: relative;
 }
 
@@ -1882,7 +1876,7 @@ header .container {
 /* section-six */
 .section-six {
   padding: 60px 0;
-  background-image: url("../../booking_tour/assets/image/six.jpg");
+  background-image: url("../../assets/image/banner.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1898,7 +1892,6 @@ header .container {
   top: 0;
   left: 0;
   z-index: 1;
-  /* transform: translate(50%, -50%); */
   opacity: 0.4;
 }
 
@@ -1944,8 +1937,7 @@ header .container {
   color: #dea806;
   display: inline-block;
   margin-bottom: 10px;
-  /* z-index: 2; */
-  background-color: #dddddd11;
+  background-color: #fff;
   padding: 15px 10px;
   border-radius: 8px;
 }
@@ -1992,7 +1984,6 @@ header .container {
   background: white;
   border-radius: 10px;
   padding: 25px;
-  /* box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; */
   transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
@@ -2425,6 +2416,7 @@ header .container {
 .feedback {
   padding: 25px 0;
   margin-top: 25px;
+  padding: 50px;
 }
 
 .feedback .inner-wrap {
@@ -2433,7 +2425,6 @@ header .container {
   justify-content: center;
   gap: 20px;
   width: 100%;
-  /* flex-wrap: wrap; */
 }
 
 .feedback .inner-wrap .item-content {
@@ -2497,7 +2488,8 @@ header .container {
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: gray;
+  background-color: #47a819;
+  color: white;
   padding: 20px;
 }
 
@@ -2540,7 +2532,20 @@ header .container {
 
 .newsletter-box a {
   text-decoration: none;
-  color: #4ecdc4;
+  color: #fff;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.newsletter-box a:hover {
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(71, 168, 25, 0.4);
 }
 
 .contact-box {

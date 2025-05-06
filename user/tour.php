@@ -5,7 +5,7 @@ require './connect.php';
 if (!isset($_SESSION['user_id'])) {
     echo "<script>
         alert('Bạn cần đăng nhập để truy cập trang này!');
-        window.location.href = 'index.php';
+        window.location.href = '../SignInOn/login.html';
     </script>";
     exit();
 }
@@ -17,9 +17,6 @@ if (!isset($_SESSION['user_id'])) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Khám phá</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -41,10 +38,20 @@ if (!isset($_SESSION['user_id'])) {
           <div class="header-top">
             <div class="container">
               <div class="contact-info">
+                <i class="fa-solid fa-door-open"></i>
+                <span class="address">
+                  <?php
+                  if (isset($_SESSION['fullname'])) {
+                      echo "Xin chào, " . htmlspecialchars($_SESSION['fullname']) . " !!!";
+                  } else {
+                      echo "Xin chào !!!";
+                  }
+                  ?>
+                </span>
               </div>
               <div class="inner-service">
                 <div class="inner-book-tour">
-                  <a href="#!"><span>Xem Ngay</span></a>
+                  
                 </div>
                 <div class="inner-social-icon">
                   <a href="#">
@@ -70,23 +77,23 @@ if (!isset($_SESSION['user_id'])) {
                   <li><a href="./index.php">Trang chủ</a></li>
                   <li><a href="./about.php">Giới Thiệu</a></li>
                   <li class="dropdown">
-                    <a href="#!">Tour</a>
+                    <a href="#!">Khám phá</a>
                   </li>
                 </ul>
               </nav>
               <div class="user-menu">
                 <i class="fa-solid fa-circle-user"></i>
                 <div class="inner-user-auth">
-                  <a href="../SignInOn/login.php">
+                  <a href="../SignInOn/login.html">
                     <i class="fa-solid fa-user"></i>
                     Đăng Nhập
                   </a>
-                  <a href="../SignInOn/register.php">
+                  <a href="../SignInOn/register.html">
                     <i class="fa-solid fa-user-plus"></i>
                     Đăng Ký
                   </a>
                   <a href="../SignInOn/logout.php">
-                  <i class="fa-solid fa-user-plus"></i>
+                  <i class="fa-solid fa-right-from-bracket"></i>
                   Đăng xuất
                 </a>
                 </div>
@@ -99,18 +106,18 @@ if (!isset($_SESSION['user_id'])) {
   
       <!-- section-one -->
       <div class="section-one">
-        <div class="slideshow-container">
-          <div class="slide fade">
-              <img src="../admin/assets/image/bg-banner.jpg" alt="BaNahill">
+      <div class="slideshow-container">
+        <div class="slide fade">
+              <img src="../admin/assets/image/banner.jpg" alt="BaNahill">
           </div>
           <div class="slide fade">
               <img src="../admin/assets/image/bg-banner2.jpg" alt="">
           </div>
           <div class="slide fade">
-              <img src="../admin/assets/image/bg-banner3.jpg" alt="">
+              <img src="../admin/assets/image/danang.jpg" alt="">
           </div>
-        </div>
       </div>
+    </div>
       <!-- End section-one -->
 
     <div class="container">
@@ -166,6 +173,36 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </form>
     </div>
+    <footer>
+    <div class="footer-container">
+        <div class="footer-box empty-box"></div>
+        <div class="footer-box image-box">
+            <h3>GVHD: <br> Trần Anh Quân</h3>
+            <h3>Nhóm 7</h3>
+            <div class="social-icons">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-tiktok"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-box spacer-box"></div>
+
+        <div class="footer-box newsletter-box">
+            <p><a href="../SignInOn/register.html">Đăng kí</a> ngay để nhận bản tin mới nhất</p>
+            <p>Chúng tôi cam kết sẽ đem đến những dịch vụ tốt nhất cho người dùng</p>
+        </div>
+
+        <div class="footer-box contact-box">
+            <h3>Liên hệ</h3>
+            <p class="label">Email</p>
+            <p>sinhvien@ut.edu.vn</p>
+            <p class="label">Địa chỉ</p>
+            <p>Trường Đại học <br> Giao Thông Vận Tải Thành phố Hồ Chí Minh</p>
+        </div>
+    </div>
+    </footer>
     <script src="./assets/javascript/tour.js"></script>
 </body>
 </html>

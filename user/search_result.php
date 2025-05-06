@@ -33,7 +33,6 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <title>Kết quả tìm kiếm</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Giả sử bạn có file CSS -->
 </head>
 <style>
     body {

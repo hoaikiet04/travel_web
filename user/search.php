@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Không có tour phù hợp
         header("Location: ./404.php");
     }
-
+ 
     $stmt->close();
     $conn->close();
 }
