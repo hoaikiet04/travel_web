@@ -69,7 +69,7 @@
             <div class="user-menu">
               <i class="fa-solid fa-circle-user"></i>
               <div class="inner-user-auth">
-                <a href="../SignInOn/login.html">
+                <a href="../SignInOn/login.php">
                   <i class="fa-solid fa-user"></i>
                   Đăng Nhập
                 </a>

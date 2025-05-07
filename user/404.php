@@ -49,6 +49,6 @@
     <p class="message">Chúng tôi không tìm thấy tour nào phù hợp với lựa chọn của bạn.<br>
     Hãy thử tìm với địa điểm hoặc loại tour khác nhé!</p>
 
-    <a href="./index.php" class="home-link">← Quay lại trang chủ</a>
+    <a href="./tour.php" class="home-link">← Quay lại trang tìm kiếm</a>
 </body>
 </html>

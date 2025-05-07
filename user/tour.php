@@ -5,7 +5,7 @@ require './connect.php';
 if (!isset($_SESSION['user_id'])) {
     echo "<script>
         alert('Bạn cần đăng nhập để truy cập trang này!');
-        window.location.href = '../SignInOn/login.html';
+        window.location.href = '../SignInOn/login.php';
     </script>";
     exit();
 }
@@ -84,7 +84,7 @@ if (!isset($_SESSION['user_id'])) {
               <div class="user-menu">
                 <i class="fa-solid fa-circle-user"></i>
                 <div class="inner-user-auth">
-                  <a href="../SignInOn/login.html">
+                  <a href="../SignInOn/login.php">
                     <i class="fa-solid fa-user"></i>
                     Đăng Nhập
                   </a>

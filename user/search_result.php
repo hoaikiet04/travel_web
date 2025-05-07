@@ -113,7 +113,7 @@ $result = $stmt->get_result();
 <body>
     <header>
         <h1>KẾT QUẢ TÌM KIẾM</h1>
-        <a href="./index.php" class="home-link">← Về trang chủ</a>
+        <a href="./tour.php" class="home-link">← Về trang tìm kiếm</a>
     </header>
 
     <?php if ($result->num_rows > 0): ?>
